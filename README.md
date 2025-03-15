@@ -1,1 +1,1 @@
-# Face-detection-and-blurring-with-Python-and-OpenCV
+# Face-Anonymizer-using-OpenCV
