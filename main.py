@@ -80,14 +80,15 @@ with mp_face_detection.FaceDetection(model_selection=0, min_detection_confidence
         output_video.release()
 
     elif args.mode in ['webcam']:
-        cap = cv2.VideoCapture(2)
+        cap = cv2.VideoCapture(0)
 
         ret, frame = cap.read()
         while ret:
             frame = process_img(frame, face_detection)
 
             cv2.imshow('frame', frame)
-            cv2.waitKey(25)
+            if cv2.waitKey(25) & 0xFF == ord('q'):
+                break
 
             ret, frame = cap.read()
 
